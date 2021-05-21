@@ -1,0 +1,62 @@
+.barrNav {
+    height: 50px;
+    background-color: #d5ffcc;
+    border-style: solid;
+    border-color: #7ab88f;
+    border-left: hidden;
+    border-right: hidden;
+  }
+
+  .username {
+    float: left;
+    margin-top: 8px;
+    margin-left: 2%;
+    font-size: 22px;
+  }
+
+
+  .card-header {
+    color: #1EAF32;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.tamaño{
+  font-size: 17px;
+}
+
+#box{
+  margin-left: auto;
+  margin-right: auto;
+    min-width: 300px;
+    max-width: 40%;
+}
+
+  .button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    background-color:  #0e551d;
+    border-radius: 15px;
+    font-family: 1;
+    font-size: 17px;
+    border: none;
+}
+body{
+  width: 100%;
+  min-height: 100vh;
+  size: cover;
+  background-image:url("bacteriablanco.jpg") ;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  margin-top: 0.5em;
+}
+
+.card-header {
+  color:  #1EAF32;//#21cf47;
+  letter-spacing: 1px;
+  text-align: center;
+  background-color: white;
+}

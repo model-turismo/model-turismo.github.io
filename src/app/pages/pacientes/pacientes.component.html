@@ -1,0 +1,85 @@
+<app-nav-bar></app-nav-bar>
+
+
+<div class=barrNav>
+
+  <h5 class="username" *ngIf="nombreDisponible()">{{nombre}}</h5>
+
+ <button class="botonBuscar" id="borrarVarios" *ngIf="filtro" (click)="eliminarFiltro()"><i class="fa fa-times"></i> </button>
+ <button class="botonBuscar" id="enviarUnico" type="submit" (click)="buscar()"><i class="fa fa-search"></i></button>
+  
+
+  <div class="form">
+    <input type="text" class="form-control" name="filterEntry" [placeholder]="'PATIENTS.SEARCH' | translate"
+      [(ngModel)]="filterEntry">
+   </div>
+
+  <select name="select" class="form-select" [(ngModel)]="field">
+    <option value="nombre">{{ 'PATIENTS.PATIENTS.FIELD_2' | translate}}</option>
+    <option value="dni">{{ 'PATIENTS.PATIENTS.FIELD_3' | translate}}</option>
+  </select>
+</div>
+
+<!--Creo un cuadro donde introducir mis pacientes-->
+<body>
+  <div class="card animate__animated animate__backInLeft">
+    <h1 class="card-header">{{  "PATIENTS.TITLE" | translate}}</h1>
+    <div class="card-body">
+
+      <table class="table table-striped" *ngIf="pacientesDisponibles()">
+        <!--Cabecera de la tabla-->
+        <thead>
+          <!-- Nueva fila con los campos principales -->
+          <tr>
+            <th class="titulo">{{ "PATIENTS.PATIENTS.FIELD_2" | translate}} </th>
+            <th class="titulo"> {{  "PATIENTS.PATIENTS.FIELD_3" | translate}} </th>
+            <th class="titulo"> {{ "PATIENTS.PATIENTS.FIELD_4" | translate}} </th>
+            <th class="titulo"> {{ "PATIENTS.PATIENTS.FIELD_1" | translate}} </th>
+            <th class="titulo"> +info </th>
+          </tr>
+        </thead>
+
+        <!-- Cuerpo de la tabla -->
+        <tbody>
+          <!-- Como queremos que se duplique tantas veces como datos en la tabla tengamos -->
+          <tr *ngFor="let p of pacientes.data ">
+            
+            <td class="paciente"> {{p.nombre}} </td>
+            <td class="paciente" >{{p.dni}} </td>
+            <td class="paciente"> {{p.edad}}</td>
+            <td class="paciente"> {{p.genero}} </td>
+            <td class="paciente"> <button class="icono" (click)="mirarPaciente(p.nombre, p.dni,p.edad)"><i class="fa fa-send"></i></button>
+            </td>
+          </tr>
+        </tbody>
+
+
+      </table>
+
+
+      <div class="numPag" *ngIf="pacientesDisponibles()">
+
+        <button class="flechas" style="font-size:24px" *ngIf="masPaginasIzq()" (click)="antPag()">
+          <i class="fa fa-caret-square-o-left"></i>
+        </button>
+
+        <h5> {{pacientes.metadata.pageNumber}}/{{pacientes.metadata.totalPages}} </h5>
+
+        <button class="flechas" style="font-size:24px" *ngIf="masPaginasDcha()" (click)="sigPag()">
+          <i class="fa fa-caret-square-o-right"></i>
+        </button>
+      </div>
+
+      <div class="card-error" *ngIf="!pacientesDisponibles()">
+        <h5> {{ "PATIENTS.NOTFOUND_MSG" | translate }}</h5>
+      </div>
+
+      <button class="boton2"
+        *ngIf="rolesDisponibles() && !this.pacientesService.getmostrandoTodos()"
+        (click)="masPacientes()">{{ "PATIENTS.MORE_PATIENTS_BUTTON" | translate}} </button>
+      <button class="boton2" *ngIf="rolesDisponibles() && this.pacientesService.getmostrandoTodos()"
+        (click)="menosPacientes()">{{ "PATIENTS.LESS_PATIENTS_BUTTON" | translate}} </button>
+
+    </div>
+  </div>
+</body>

@@ -1,0 +1,58 @@
+:host {
+  display: inline;
+  align-items: center;
+  font-size: 1.5rem;
+  gap: 3rem;
+  left: 20%;
+}
+.menu {
+  background-color: white;
+}
+
+.spanishButton {
+  background-image: url(español.png);
+  right: 55px;
+}
+.englishButton {
+  background-image: url(ingles.png);
+  right: 20px;
+}
+
+button {
+  border: none;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  background-size: 100%;
+  position: absolute;
+  top: 5px;
+
+  border-radius: 50%;
+  color: transparent;
+}
+
+button:hover {
+  background: white;
+  color: hsl(120, 58%, 59%);
+  box-shadow: inset 0 0 0 3px hsl(120, 58%, 59%);
+  content: "ESP";
+  transition-delay: 76ms;
+  visibility: visible;
+  font-size: 11px;
+}
+
+.disconnect {
+  right: 90px;
+  color: #000;
+  font-size: 20px;
+}
+.disconnect:hover {
+  font-size: 20px;
+}
+
+// #p {
+//   text-decoration: none;
+//   color: black;
+//   font-size: 20px;
+//   margin-left: 10px;
+// }

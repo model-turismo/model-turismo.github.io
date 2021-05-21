@@ -1,0 +1,61 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<app-nav-bar></app-nav-bar>
+
+<body>
+  <div class="card animate__animated animate__backInDown">
+
+    <div *ngIf="generoDisponible()">
+      <h1 class="card-header" *ngIf="this.loginService.getAtribs().genero==='Hombre'">
+        {{"TECHSUITE-WIKI.WELCOME_MSG_HOMBRE"| translate}}</h1>
+      <h1 class="card-header" *ngIf="this.loginService.getAtribs().genero==='Mujer'">
+        {{"TECHSUITE-WIKI.WELCOME_MSG_MUJER"| translate}}</h1>
+      <h1 class="card-header" *ngIf="this.loginService.getAtribs().genero==='Otro'">
+        {{"TECHSUITE-WIKI.WELCOME_MSG_OTRO"| translate}}</h1>
+    </div>
+
+    <div class="card-body">
+
+      <h2>{{"TECHSUITE-WIKI.INFO_MSG" | translate}}</h2>
+
+      <form [formGroup]="formulario" (keydown.enter)="$event.preventDefault()">
+        <div formArrayName="medicamentos">
+          <div *ngFor="let medicamento of medicamentos.controls; let i = index">
+            <div *ngIf="numEltos > 1">
+              <input id="inputVarios" type="text" [(ngModel)]="medicamentos.value[i].text"
+                [ngModelOptions]="{ standalone: true }" />
+              <button class="icono" id="borrarVarios" (click)="borrarMedicamento(i)">
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+
+            <div *ngIf="numEltos == 1">
+              <input id="inputUnico" type="text" [(ngModel)]="medicamentos.value[i].text"
+                [ngModelOptions]="{ standalone: true }" />
+              <button class="icono" type="reset">
+                <i class="fa fa-times" type="reset"></i>
+              </button>
+              <button class="icono" id="enviarUnico" type="submit" (click)="avanzarPagMedicamento(this.medicamentos.value[0].text)"><i
+                  class="fa fa-send"></i></button>
+            </div>
+          </div>
+        </div>
+        <button id="botonUnico" *ngIf="numEltos == 1"
+          (click)="anadirMedicamento()">{{"TECHSUITE-WIKI.ADD_BUTTON" | translate}}</button>
+        <button *ngIf="numEltos > 1" (click)="anadirMedicamento()">{{"TECHSUITE-WIKI.ADD_BUTTON" | translate}}</button>
+
+        <div *ngIf="numEltos > 1">
+          <button type="submit"
+            (click)="avanzarPagComparacion()">{{"TECHSUITE-WIKI.SUBMIT_BUTTON" | translate}}</button>
+        </div>
+
+        <div id="errores">
+          <strong id="mensajeError" *ngIf="mensaje_a_mostrar===1">{{"TECHSUITE-WIKI.ERROR_MSG1" | translate}}</strong>
+          <strong id="mensajeError" *ngIf="mensaje_a_mostrar===2">{{"TECHSUITE-WIKI.ERROR_MSG2" | translate}}</strong>
+          <strong id="mensajeError" *ngIf="mensaje_a_mostrar===3">{{"TECHSUITE-WIKI.ERROR_MSG3" | translate}}</strong>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,68 @@
+<app-nav-bar></app-nav-bar>
+
+
+<body>
+
+  <div id="medicamento1" *ngIf="medicamentoDisponible1()" class="animate__animated animate__fadeIn">
+    <!--<app-title-parrafo titulo="Contraindicaciones" info={{infoContraindicaciones}}></app-title-parrafo>-->
+    <h1 class="card-header">
+      {{nombresReales[0]}}
+    </h1>
+    <div class="card-body">
+      <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_1" |translate}} </h1>
+      <h4>{{infoContraindicaciones[0]}}</h4>
+
+      <div id="ayuda">
+        <button (click)="accederPagMedicamento(nombres[0])">{{"COMPARACION.PAG_MEDICAMENTO" | translate}}</button>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div id="medicamento2" *ngIf="medicamentoDisponible2()" class="animate__animated animate__fadeIn">
+    <!--<app-title-parrafo titulo="Contraindicaciones" info={{infoContraindicaciones}}></app-title-parrafo>-->
+    <h1 class="card-header">
+      {{nombresReales[1]}}
+    </h1>
+    <div class="card-body">
+      <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_1" |translate}} </h1>
+      <h4>{{infoContraindicaciones[1]}}</h4>
+
+      <div id="ayuda">
+        <button (click)="accederPagMedicamento(nombres[1])">{{"COMPARACION.PAG_MEDICAMENTO" | translate}}</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="datosCargados1 && datosCargados2">
+
+    <div class="card-body-error animate__animated animate__fadeIn" *ngIf="!medEncontrado1()">
+      <h4> {{"MEDICAMENTO.NOTFOUND_MSG" | translate }} {{nombres[0]}}</h4>
+      <button type="button" class="btn btn-primary button"
+        (click)="volver()">{{"PATIENTS_DETAIL.PATIENTS.FIELD_10"|translate}}</button>
+    </div>
+
+    <div class="card-body-error animate__animated animate__fadeIn" *ngIf="!medEncontrado2()">
+      <h4> {{"MEDICAMENTO.NOTFOUND_MSG" | translate }} {{nombres[1]}}</h4>
+      <button type="button" class="btn btn-primary button"
+        (click)="volver()">{{"PATIENTS_DETAIL.PATIENTS.FIELD_10"|translate}}</button>
+    </div>
+
+    <div class="card-body-error animate__animated animate__fadeIn" *ngIf="medEncontrado1() && !medicamentoDisponible1()">
+      <h4> {{"COMPARACION.NOTFOUND_CONTRAINDICACION_MSG" | translate }} {{nombres[0]}}</h4>
+      <button type="button" class="btn btn-primary button"
+        (click)="volver()">{{"PATIENTS_DETAIL.PATIENTS.FIELD_10"|translate}}</button>
+    </div>
+
+    <div class="card-body-error animate__animated animate__fadeIn" *ngIf="medEncontrado2() && !medicamentoDisponible2()">
+      <h4> {{"COMPARACION.NOTFOUND_CONTRAINDICACION_MSG"| translate }} {{nombres[1]}}</h4>
+      <button type="button" class="btn btn-primary button"
+        (click)="volver()">{{"PATIENTS_DETAIL.PATIENTS.FIELD_10"|translate}}</button>
+    </div>
+
+  </div>
+
+</body>

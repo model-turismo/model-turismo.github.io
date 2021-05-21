@@ -1,0 +1,36 @@
+<app-nav-bar></app-nav-bar>
+
+
+<app-center-layout>
+
+    <link rel="stylesheet" type="text/css" href="bienvenida.component.scss">
+
+      <div class="welcome-box animate__animated animate__fadeIn">
+        <!--Aqui va el senior, el alt es lo que te sale cuando pones el raton encima-->
+          <div class="emojis">
+            <img class="foto-doctor"  *ngIf="atribsDisponibles() && this.rol==='Doctor'" src="https://images.emojiterra.com/google/android-11/512px/1fa7a.png" alt="Saludos">
+            <img class="foto-laboratorio" *ngIf="atribsDisponibles() && this.rol==='TrabajadorLaboratorio'"
+              src="https://images.emojiterra.com/twitter/v13.0/512px/1f52c.png" alt="Saludos">
+          </div>
+        <h1 class="card-header" *ngIf="atribsDisponibles() && this.genero==='Hombre'">
+          {{"WELCOME.WELCOME_MSG_HOMBRE"| translate}}</h1>
+        <h1 class="card-header" *ngIf="atribsDisponibles() && this.genero==='Mujer'">
+          {{"WELCOME.WELCOME_MSG_MUJER"| translate}}</h1>
+        <h1 class="card-header" *ngIf="atribsDisponibles() && this.genero==='Otro'">
+            {{"WELCOME.WELCOME_MSG"| translate}}</h1>
+
+        <br>
+        <h1 class="card-header" *ngIf="atribsDisponibles()">{{nombre}}</h1>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+          href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Open+Sans+Condensed:wght@300&display=swap"
+          rel="stylesheet">
+
+        <div class="botones">
+          <button type="button" class="boton1" routerLink='/home/pacientes'
+            >{{"WELCOME.PATIENTS_BUTTON"| translate}}</button>
+          <button type="button" class="boton2" routerLink='/home/techsuite-wiki'>Techsuite-Wiki</button>
+          <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+        </div>
+      </div>
+</app-center-layout>

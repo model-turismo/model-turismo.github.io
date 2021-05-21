@@ -1,0 +1,32 @@
+<app-nav-bar></app-nav-bar>
+
+<app-center-layout>
+
+  <form class="formulario">
+    <h1 class="card-header">{{"LOGIN.TITLE" | translate}}</h1>
+
+    <div class="contenedor animate__animated animate__fadeIn">
+      <div *ngIf="!this.loginService.isImpostor()">
+        <input type="text" [placeholder]="'LOGIN.USERNAME_FIELD' | translate" [(ngModel)]="user.dni"
+          [ngModelOptions]="{ standalone: true }" />
+        <input type="password" [placeholder]="'LOGIN.PASSWORD_FIELD' | translate" [(ngModel)]="user.password"
+          [ngModelOptions]="{ standalone: true }" />
+        <input type="submit" [value]="'LOGIN.BUTTON' | translate" class="button" (click)="loging_with_backend()" />
+        <strong id="mensajeError" *ngIf="mensaje_a_mostrar">{{
+           'LOGIN.ERROR_MSG' | translate
+          }}</strong>
+      </div>
+
+
+      <div *ngIf="this.loginService.isImpostor()">
+        <input type="text" [placeholder]=" 'LOGIN.IMPOSTOR' |translate" [(ngModel)]="tokenUsuarioASuplantar"
+          [ngModelOptions]="{ standalone: true }" />
+        <input type="submit" [value]=" 'LOGIN.IMPOSTOR_BUTTON' | translate " class="button"
+          (click)="mandarImpostor()" />
+        <strong id="mensajeError" *ngIf="mensajeImpostor">{{
+              'LOGIN.ERROR_MSG_IMPOSTOR' | translate
+             }}</strong>
+      </div>
+    </div>
+  </form>
+</app-center-layout>

@@ -1,0 +1,68 @@
+.welcome-box{
+  background: white;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.emojis {
+  width: 90px;
+  height: 90px;
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  // top: -12%;
+  border-radius: 30%;
+  display: flex; 
+  justify-content: center;
+  // margin-bottom:30px;
+  // background-color: #fff;
+}
+
+
+.card-header{
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  font-size: 26px;
+  font-family: 'Dosis', sans-serif;
+  color: #666666;
+  letter-spacing: 1.5px;
+  border-style: hidden;
+  background-color: white;
+}
+
+.welcome-box .boton1,
+.welcome-box .boton2{
+  display: inline-block;
+  position: auto;
+  padding: 15px 30px;
+  color: white;
+  background-color: #0fa12e;
+  font-size: 16px;
+  transition: 0.2s;
+  border-radius: 15px;
+  border-style: hidden;
+}
+
+.welcome-box .boton1:hover,
+.welcome-box .boton2:hover{
+  box-shadow: 0 0 10px #b3ffb7, 0 0 20px #b3ffb3, 0 0 20px #b3ffb3;
+  transition-delay: 1ms;
+}
+
+
+.welcome-box .boton1{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 65px;
+  width: 100%;
+}
+
+.welcome-box .boton2{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 100%;
+}

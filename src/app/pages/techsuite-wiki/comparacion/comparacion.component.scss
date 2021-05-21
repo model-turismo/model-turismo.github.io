@@ -1,0 +1,64 @@
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    size: cover;
+    background: url("../bacteriablanco.jpg") center top ;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  
+  .card-header {
+    margin-top: 1%;
+  
+    color: #1eaf32;
+    letter-spacing: 1px;
+    text-align: center;
+    background-color: white;
+  
+    font-weight: bold;
+    font-size: 40px;
+    
+    text-align: center;
+    width: 100%;
+    // background-image: url("bateriaverde.jpg");
+    // background-size: cover;
+    // background-attachment: fixed;
+  }
+  
+  
+  .card-body h2 {
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.87);
+  }
+  
+  #ayuda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-body{ 
+    margin-top: 1%;
+    margin-bottom: 5%;
+    background-color: rgba(255, 255, 255, 0.849);
+  }
+  
+  button {
+    border: none;
+    color: white;
+    font-size: 20px;
+    background: #0f5f18; // #2E9C3D;//#11992e;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+  .card-body-error{ 
+    margin-top: 1%;
+    margin-bottom: 5%;
+    background-color: rgba(255, 255, 255, 0.849);
+    text-align: center;
+    padding: 2rem;
+  }
+    
+  
