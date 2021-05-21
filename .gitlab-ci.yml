@@ -1,0 +1,24 @@
+image: node:alpine
+
+cache:
+  paths:
+    - ${CI_PROJECT_DIR}/node_modules/
+
+build:
+  script: 
+    - npm i
+    - npm run ng -- build --base-href=/${CI_PROJECT_NAME}/
+  artifacts:
+    paths:
+      - ${CI_PROJECT_DIR}/public
+
+pages:
+  image: ubuntu
+  stage: deploy
+  script:
+    - cp public/index.html public/404.html
+  artifacts:
+    paths:
+      - ${CI_PROJECT_DIR}/public
+  only:
+    - develop
