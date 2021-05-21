@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #1a2537;
+  font-size: 40px;
+}
+
+h2 {
+  margin-top: 20px;
+  text-align: center;
+  color: #313131; // #1a2537
+}
+
+strong{
+  font-size: 20px;
+}
+//para evitar que se cuele texto de error le quito el float al ultimo boton de los campos a rellenar
+#enviarUnico,  #borrarVarios{
+  float:none;
+}
+
+
+input[type="text"] {
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 10px;
+  float: left;
+}
+#inputUnico {
+  width: 79%;
+}
+#inputVarios {
+  width: 89%;
+}
+
+.icono {
+  font-size: 25px;
+  width: 10%;
+  margin-left: 1px;
+  margin-bottom: 10px;
+  height: 43px;
+}
+.icono:hover {
+  color:#0f5f18; // #2E9C3D; 
+  background-color: #ffffff;
+}
+
+button {
+  border: none;
+  width: 50%;
+  color: white;
+  font-size: 20px;
+  background: #0f5f18; // #2E9C3D;//#11992e;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  float: left;
+  height: 30px;
+}
+
+#botonUnico{
+  width: 100%;
+}
+
+.card-header {
+  color: #1EAF32;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.card{
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  size: cover;
+  background-image:url("bacteriablanco.jpg") ;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  padding: 5rem; 
+}

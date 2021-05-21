@@ -1,0 +1,21 @@
+<app-nav-bar></app-nav-bar>
+
+<app-center-layout>
+  <div class="card">
+    <h1 class="card-header">{{ "404.404_TITLE" | translate}}</h1>
+    <div class="card-body">
+      <p class="p-4">{{"404.404_MSG" | translate}}
+      </p>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Open+Sans+Condensed:wght@300&display=swap"
+        rel="stylesheet">
+      <button type="button" class="btn btn-primary button" *ngIf="conectado()"
+        (click)="redirigirInicio()">{{"404.404_BUTTON_CON" | translate}}</button>
+
+        <button type="button" class="btn btn-primary button" *ngIf="!conectado()"
+        (click)="redirigirInicio()">{{"404.404_BUTTON_NO_CON" | translate}}</button>
+
+    </div>
+  </div>
+</app-center-layout>

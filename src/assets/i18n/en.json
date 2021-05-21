@@ -1,0 +1,136 @@
+{
+  "NAV_BAR":{
+    "HOME":"Home",
+    "LOGIN":"Login",
+    "WELCOME":"Home",
+    "PATIENTS":"Patients",
+    "WIKI":"Techsuite-Wiki"
+
+  },
+  "HOME":{
+    "TITLE":"Welcome to April Clinic",
+    "WELCOME_MSG": "The work environment of April Clinic stands out for its group dynamics which makes each professional feel part of a great healthcare community.\n Enter your credentials, by clicking on \"Login\", to check your patients' data.",
+    "LOGIN_BUTTON":"Login"
+  },
+
+  "LOGIN": {
+    "USERNAME_FIELD": "ID card",
+    "PASSWORD_FIELD": "Password",
+    "TITLE":"Login",
+    "LOGIN_BUTTON":"Login",
+    "ERROR_MSG":"Invalid username or password",
+    "ERROR_MSG_IMPOSTOR":"Incorrect key",
+    "BUTTON": "Login",
+    "IMPOSTOR":"Doctor's key to simulate",
+    "IMPOSTOR_BUTTON":"Submit"
+  },
+  "WELCOME":{
+    "WELCOME_MSG":"Welcome",
+    "WELCOME_MSG_HOMBRE":"Welcome",
+    "WELCOME_MSG_MUJER":"Welcome",
+    "PATIENTS_BUTTON":"Patients"
+  },
+  "404":{
+    "404_TITLE":"Page not found",
+    "404_MSG":"This page does not exist. We can't find the page you are looking for.",
+    "404_BUTTON_CON":"Go to Welcome page",
+    "404_BUTTON_NO_CON":"Go to the homepage"
+  },
+
+  "TECHSUITE-WIKI":{
+    "WELCOME_MSG_HOMBRE": "Welcome to Techsuite-Wiki",
+    "WELCOME_MSG_MUJER": "Welcome to Techsuite-Wiki",
+    "WELCOME_MSG_OTRO": "Welcome to Techsuite-Wiki",
+    "INFO_MSG":"Enter medicine, natural product or disease:",
+    "ADD_BUTTON": "Add",
+    "SUBMIT_BUTTON": "Compare",
+    "ERROR_MSG1": "The maximum number to compare is 2.",
+    "ERROR_MSG2": "You must introduce a medicine, natural product or disease.",
+    "ERROR_MSG3": "You must introduce a medicine or a natural product in each field."
+  },
+
+  "COMPARACION":{
+    "PAG_MEDICAMENTO":"Click here for more information",    
+    "NOTFOUND_CONTRAINDICACION_MSG": "No contraindications found for "
+  },
+
+  "MEDICAMENTO":{
+    "PAG_OFICIAL":"Click here to access to the official page",
+    "NOTFOUND_MSG": "No results found for " ,
+    "REGISTRAR": "Register {{nombred}}"
+  },
+
+  "PATIENTS":{
+    "SEARCH":"Search",
+    "TITLE":"My patients",
+    "MORE_PATIENTS_BUTTON":"All patients",
+    "LESS_PATIENTS_BUTTON":"Only my patients",
+    "PATIENTS.FIELD_1": "Gender",
+    "PATIENTS.FIELD_2": "Name",
+    "PATIENTS.FIELD_3":"ID CARD",
+    "PATIENTS.FIELD_4":"Age",
+    "NOTFOUND_MSG": "We couldn't find any patient with this data."
+    },
+
+  "PATIENTS_DETAIL":{
+    "PATIENTS.FIELD_0":"Patient: {{nombrePac}}",
+    "PATIENTS.FIELD_1": "Gender",
+    "PATIENTS.FIELD_2": "Name",
+    "PATIENTS.FIELD_3":"ID CARD",
+    "PATIENTS.FIELD_4":"Age",
+    "PATIENTS.FIELD_5":"Consultations",
+    "PATIENTS.FIELD_6":"Laboratory tests",
+    "PATIENTS.FIELD_7":"Diseases",
+    "PATIENTS.FIELD_8":"Medication",
+    "PATIENTS.FIELD_9":"Observations",
+    "NOTFOUND_ENF": "There are no registered diseases.",
+    "NOTFOUND_MED": "There are no registered medicines.",
+    "NOTFOUND_PRU": "There are no registered tests.",
+    "NOTFOUND_CONS": "There are no registered consultations.",
+    "PATIENTS.FIELD_10":"Go back"
+
+  },
+  "PATIENTSDET":{
+    "PATIENTS.FIELD_1": "Id",
+    "PATIENTS.FIELD_2": "Date",
+    "PATIENTS.FIELD_3": "Doctor ID",
+    "PATIENTS.FIELD_4": "Doctor name",
+    "PATIENTS.FIELD_5": "Age",
+    "PATIENTS.FIELD_6": "Laboratory person ID",
+    "PATIENTS.FIELD_7": "Laboratory person name",
+    "PATIENTS.FIELD_8": "Type of test",
+    "PATIENTS.FIELD_9": "Name",
+    "PATIENTS.FIELD_10": "Laboratory person"
+  },
+  "TECHSUITE_WIKI":{
+    "MEDICAMENTO.FIELD_1":"Contraindications",
+    "MEDICAMENTO.FIELD_2":"Posology",
+    "MEDICAMENTO.FIELD_3":"Information pamphlet",
+    "MEDICAMENTO.FIELD_4":"Composition",
+    "ENFERMEDAD.FIELD_1":"Symptom",
+    "ENFERMEDAD.FIELD_2":"Recomendations",
+    "HOMEOPATIA.FIELD_1":"Recomendaciones"
+
+  },
+
+  "PRUEBAS":{
+    "INFO.FIELD_1":"Date: {{fecha}}",
+    "INFO.FIELD_2":"Type of test: {{pruebatipo}}",
+    "INFO.FIELD_3":"Laboratory person: {{trablab}}",
+    "INFO.FIELD_4":"Electrolytes: {{numelectrolitos}}",
+    "INFO.FIELD_5":"Glucose: {{numglucosa}}",
+    "INFO.FIELD_6":" Cholesterol: {{colesterol1}}",
+    "INFO.FIELD_7":" Triglycerides: {{trigliceridos1}}",
+    "INFO.FIELD_8":" Bilirubin: {{bilirrubina1}}",
+    "INFO.FIELD_9":"Fluorescence:  {{fluorescencia1}}",
+    "INFO.FIELD_10": "Blood test"
+  },
+
+  "CONSULTAS":{
+    "INFO.FIELD_1":"Doctor name: {{doctor}}",
+    "INFO.FIELD_2":"Date: {{fecha1}}",
+    "INFO.FIELD_3": "Observations: {{observaciones1}}"
+  }
+}
+
+

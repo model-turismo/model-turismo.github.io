@@ -1,0 +1,15 @@
+<app-nav-bar></app-nav-bar>
+
+<app-center-layout>
+  <div class="card animate__animated animate__backInDown">
+    <h1 class="card-header">{{ "HOME.TITLE" | translate}}</h1>
+    <div class="card-body">
+      <p class="p-4">{{"HOME.WELCOME_MSG" | translate}}
+      </p>
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+      <button type="button" class="btn btn-primary button" (click)="iniciarSesion()">{{"HOME.LOGIN_BUTTON" | translate}}</button>
+
+    </div>
+  </div>
+</app-center-layout>

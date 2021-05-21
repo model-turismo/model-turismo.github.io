@@ -1,0 +1,36 @@
+<app-nav-bar>
+</app-nav-bar>
+<div class=barrNav>
+
+    <h4 class="username" *ngIf="nombreDisponible()">{{nombre}}</h4>
+    
+  
+</div>
+
+<body>
+    <h1 class="card-header">{{"PATIENTS_DETAIL.PATIENTS.FIELD_0"|translate: {nombrePac:nombrePaciente}   }}</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id = "box" class="card animate__animated animate__backInLeft"> 
+    
+    
+        <div  class="card-body">
+            <p class="tamaño">{{"CONSULTAS.INFO.FIELD_1"|translate: {doctor:doctorNombre}  }}</p>
+            <p class="tamaño">{{"CONSULTAS.INFO.FIELD_2"|translate: {fecha1:fecha}   }}</p>
+            <p class="tamaño">{{"CONSULTAS.INFO.FIELD_3"|translate: {observaciones1: observaciones}   }}</p>
+        </div>
+    <hr>
+    <button type="button" class="btn btn-primary button" (click)="volver()"> {{"PATIENTS_DETAIL.PATIENTS.FIELD_10"|translate}}</button>
+    <hr>
+</div>
+</body>
+
+
+
+    
+
+
+    
+

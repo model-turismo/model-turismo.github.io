@@ -1,0 +1,144 @@
+{
+  "NAV_BAR":{
+    "HOME":"Inicio",
+    "LOGIN":"Login",
+    "WELCOME":"Inicio",
+    "PATIENTS":"Pacientes",
+    "WIKI":"Techsuite-Wiki"
+
+
+  },
+
+  "HOME":{
+    "TITLE":"Bienvenido a la Clínica April",
+    "WELCOME_MSG": "El ambiente de trabajo de la Clínica April destaca por sus dinámicas de grupo que hacen que cada profesional se sienta parte de una gran comunidad sanitaria.\n Introduzca sus credenciales, pulsando en “Iniciar sesión”, para consultar los datos de sus pacientes.",
+    "LOGIN_BUTTON":"Iniciar Sesión"
+  },
+
+  "LOGIN": {
+    "USERNAME_FIELD": "DNI",
+    "PASSWORD_FIELD": "Contraseña",
+    "TITLE":"Inicio de sesión",
+    "LOGIN_BUTTON":"Iniciar sesión",
+    "ERROR_MSG":"Usuario y/o contraseña incorrecta",
+    "ERROR_MSG_IMPOSTOR":"Clave incorrecta",
+    "IMPOSTOR":"Clave doctor a simular",
+    "IMPOSTOR_BUTTON":"Enviar",
+    "BUTTON": "Entrar"
+
+  }  ,
+  "WELCOME":{
+    "WELCOME_MSG":"Bienvenid@",
+    "WELCOME_MSG_HOMBRE":"Bienvenido",
+    "WELCOME_MSG_MUJER":"Bienvenida",
+    "PATIENTS_BUTTON":"Pacientes"
+  },
+  "404":{
+    "404_TITLE":"Página no encontrada",
+    "404_MSG":"Esta página no existe. No hemos podido localizar la página que buscas.",
+    "404_BUTTON_CON":"Ir a página de bienvenida",
+    "404_BUTTON_NO_CON":"Ir a página de inicio"
+
+  },
+  "TECHSUITE-WIKI":{
+    "WELCOME_MSG_HOMBRE": "Bienvenido a Techsuite-Wiki",
+    "WELCOME_MSG_MUJER": "Bienvenida a Techsuite-Wiki",
+    "WELCOME_MSG_OTRO": "Bienvenid@ a Techsuite-Wiki",
+    "INFO_MSG":"Introduzca medicamento, producto natural o enfermedad:",
+    "ADD_BUTTON": "Añadir",
+    "SUBMIT_BUTTON": "Comparar",
+    "ERROR_MSG1": "El número máximo a comparar es 2.",
+    "ERROR_MSG2": "Debe introducir un medicamento, producto natural o enfermedad.",
+    "ERROR_MSG3": "Debe introducir un medicamento o producto natural en cada campo."
+
+  },
+
+  "COMPARACION":{
+    "PAG_MEDICAMENTO":"Pulse si necesita más información",
+    "NOTFOUND_CONTRAINDICACION_MSG": "No se han encontrado contraindicaciones para "
+  },
+
+  "MEDICAMENTO":{
+    "PAG_OFICIAL":"Pulse para acceder a la página oficial",
+    "NOTFOUND_MSG": "No se han encontrado resultados para ",
+    "REGISTRAR": "Registra {{nombred}}  "
+
+  },
+
+  "PATIENTS":{
+    "SEARCH":"Buscar",
+    "TITLE":"Mis Pacientes",
+    "MORE_PATIENTS_BUTTON":"Todos los pacientes",
+    "LESS_PATIENTS_BUTTON":"Solo mis pacientes",
+    "PATIENTS.FIELD_1": "Sexo",
+    "PATIENTS.FIELD_2": "Nombre",
+    "PATIENTS.FIELD_3":"DNI",
+    "PATIENTS.FIELD_4":"Edad",
+    "NOTFOUND_MSG": "No se ha encontrado ningún paciente con estos datos."
+
+  },
+
+  "PATIENTS_DETAIL":{
+    "PATIENTS.FIELD_0":"Paciente: {{nombrePac}}",
+    "PATIENTS.FIELD_1": "Sexo",
+    "PATIENTS.FIELD_2": "Nombre",
+    "PATIENTS.FIELD_3":"DNI",
+    "PATIENTS.FIELD_4":"Edad",
+    "PATIENTS.FIELD_5":"Consultas",
+    "PATIENTS.FIELD_6":"Pruebas de laboratorio",
+    "PATIENTS.FIELD_7":"Afecciones",
+    "PATIENTS.FIELD_8":"Medicación",
+    "PATIENTS.FIELD_9":"Observaciones",
+    "NOTFOUND_ENF": "No tiene enfermedades registradas.",
+    "NOTFOUND_MED": "No tiene medicamentos registrados.",
+    "NOTFOUND_PRU": "No tiene pruebas registradas.",
+    "NOTFOUND_CONS": "No tiene consultas registradas.",
+    "PATIENTS.FIELD_10":"Volver"
+
+  },
+  "PATIENTSDET":{
+    "PATIENTS.FIELD_1": "Id",
+    "PATIENTS.FIELD_2": "Fecha",
+    "PATIENTS.FIELD_3": "DNI doctor",
+    "PATIENTS.FIELD_4": "Nombre doctor",
+    "PATIENTS.FIELD_5": "Edad",
+    "PATIENTS.FIELD_6": "DNI personal de laboratorio",
+    "PATIENTS.FIELD_7": "Nombre personal de laboratorio",
+    "PATIENTS.FIELD_8": "Tipo de prueba",
+    "PATIENTS.FIELD_9": "Nombre",
+    "PATIENTS.FIELD_10": "Personal de laboratorio"
+
+
+
+
+
+  },
+  "TECHSUITE_WIKI":{
+    "MEDICAMENTO.FIELD_1":"Contraindicaciones",
+    "MEDICAMENTO.FIELD_2":"Posologia",
+    "MEDICAMENTO.FIELD_3":"Prospecto",
+    "MEDICAMENTO.FIELD_4":"Composicion",
+    "ENFERMEDAD.FIELD_1":"Sintomas",
+    "ENFERMEDAD.FIELD_2":"Recomendaciones",
+    "HOMEOPATIA.FIELD_1":"Recomendaciones"
+  },
+  "PRUEBAS":{
+    "INFO.FIELD_1":"Fecha de realización: {{fecha}}",
+    "INFO.FIELD_2":"Tipo de prueba: {{pruebatipo}}",
+    "INFO.FIELD_3":"Trabajador de laboratorio: {{trablab}}",
+    "INFO.FIELD_4":"Electrolitos: {{numelectrolitos}}",
+    "INFO.FIELD_5":"Glucosa: {{numglucosa}}",
+    "INFO.FIELD_6":" Colesterol: {{colesterol1}}",
+    "INFO.FIELD_7":" Trigliceridos: {{trigliceridos1}}",
+    "INFO.FIELD_8":" Bilirrubina: {{bilirrubina1}}",
+    "INFO.FIELD_9":"Fluorescencia:  {{fluorescencia1}}",
+    "INFO.FIELD_10": "Análisis de sangre"
+  },
+  "CONSULTAS":{
+    "INFO.FIELD_1":"Nombre doctor: {{doctor}}",
+    "INFO.FIELD_2":"Fecha: {{fecha1}}",
+    "INFO.FIELD_3": "Observaciones: {{observaciones1}}"
+  }
+}
+
+

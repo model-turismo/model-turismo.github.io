@@ -1,0 +1,14 @@
+.app-layout-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-height: 100vh;
+  padding: 5rem;
+}
+
+.background {
+  background-image: url("bateriaverde.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}

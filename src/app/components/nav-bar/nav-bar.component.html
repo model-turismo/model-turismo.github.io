@@ -1,0 +1,31 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div class=menu>
+  <img class="logo" src="https://drive.google.com/uc?id=11S5p_sDmewpkVvXgnvdmj8SmkhX1RIJf" alt="Logo" width="40px"
+    height="40px">
+
+    <app-nav-bar-element id="inicio" *ngIf="!conectado()" link="/">{{"NAV_BAR.HOME" | translate }}
+    </app-nav-bar-element>
+    <app-nav-bar-element id="Login" *ngIf="!conectado()" link="/login">{{"NAV_BAR.LOGIN" | translate}}
+    </app-nav-bar-element>
+
+
+  <!-- <text id="nombre" *ngIf="conectado() && nombreDisponible()">{{nombre_apellidos}}</text> -->
+
+    <app-nav-bar-element  id="p"*ngIf="conectado()" link="/home/bienvenida">{{"NAV_BAR.WELCOME" | translate }} </app-nav-bar-element>
+    <!--<app-nav-bar-element id="p" *ngIf="conectado()" (click)="irPacientes()">{{"NAV_BAR.PATIENTS" | translate }} </app-nav-bar-element>-->
+    <app-nav-bar-element id="p" *ngIf="conectado()" link="/home/pacientes">{{"NAV_BAR.PATIENTS" | translate }} </app-nav-bar-element>
+    <app-nav-bar-element id="p"*ngIf="conectado()" link="/home/techsuite-wiki">{{"NAV_BAR.WIKI" | translate }} </app-nav-bar-element>
+    
+
+    <button class="disconnect" *ngIf="conectado() || isImpostor()" (click)="disconnect()"><i class="fa fa-sign-out"></i></button>
+
+
+  <div class="idiomas">
+    <button type="button" class="spanishButton" (click)='toggleSpanish()'>ESP
+    </button>
+    <button type="button" class="englishButton" (click)='toggleEnglish()'>ENG </button>
+  </div>
+</div>
+

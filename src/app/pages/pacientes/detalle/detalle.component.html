@@ -1,0 +1,216 @@
+<app-nav-bar></app-nav-bar>
+
+<div class=barrNav>
+
+  <h4 class="username" *ngIf="nombreDisponible()">{{nombre}}</h4>
+
+</div>
+
+<body>
+  <div class="card animate__animated animate__backInLeft">
+  <!--<h1 class="card-header">Paciente: {{nombrePaciente}}</h1>-->
+  <h1 class="card-header">{{"PATIENTS_DETAIL.PATIENTS.FIELD_0"|translate: {nombrePac:nombrePaciente}   }}</h1>
+  <div class="card-body">
+    <!--<app-title-parrafo titulo="DNI" info={{dni}}></app-title-parrafo> -->
+    <h1 class="categoria">{{"PATIENTS_DETAIL.PATIENTS.FIELD_3"|translate}}</h1>
+    <h4 class="categoria">{{dni}}</h4>
+    <br>
+    <h1 class="categoria"> {{  "PATIENTSDET.PATIENTS.FIELD_5" | translate }}</h1>
+    <h4 class="categoria">{{edad}}</h4>
+    <br>
+
+    <!--<h4>{{edad}}</h3> -->
+    <!--<app-title-parrafo titulo= "Edad" info={{edad}}></app-title-parrafo> -->
+
+    <div *ngIf="consultasDisponibles()">
+      <h1 class="categoria">{{"PATIENTS_DETAIL.PATIENTS.FIELD_5"|translate}}</h1>
+      <!--<app-title-parrafo  titulo="Consultas" info=""></app-title-parrafo>-->
+
+      <table class="table table-striped">
+        <!--Cabecera de la tabla-->
+        <thead>
+          <!-- Nueva fila con los campos principales -->
+          <tr>
+            <th class="cons">{{ "PATIENTSDET.PATIENTS.FIELD_2" | translate}} </th>
+            <th class="cons"> {{  "PATIENTSDET.PATIENTS.FIELD_4" | translate}} </th>
+            <th class="cons"> +info</th>
+
+          </tr>
+        </thead>
+
+        <!-- Cuerpo de la tabla -->
+        <tbody>
+          <!-- Como queremos que se duplique tantas veces como datos en la tabla tengamos -->
+          <tr *ngFor="let p of consultas.data">
+            <td class="cons"> {{convertirFecha(p.fechaRealizacion) | date: "M/d/yy"}}</td>
+            <td class="cons"> {{p.doctorNombre}} </td>
+            <td class="cons"><button class="icono" (click)="conseguirInfoCons(p.idConsulta)"><i
+                  class="fa fa-send"></i></button></td>
+          </tr>
+        </tbody>
+
+        <div class="numPag">
+
+          <button class="flechas" style="font-size:24px" *ngIf="masPaginasIzqCons()" (click)="antPagCons()">
+            <i class="fa fa-caret-square-o-left"></i>
+          </button>
+
+          <h5> {{consultas.metadata.pageNumber}}/{{consultas.metadata.totalPages}} </h5>
+
+          <button class="flechas" style="font-size:24px" *ngIf="masPaginasDchaCons()" (click)="sigPagCons()">
+            <i class="fa fa-caret-square-o-right"></i>
+          </button>
+        </div>
+      </table>
+
+    </div>
+
+    <div *ngIf="!consultasDisponibles()">
+      <h1 class="categoria">{{"PATIENTS_DETAIL.PATIENTS.FIELD_5"|translate}}</h1>
+      <h4 class="categoria"> {{ "PATIENTS_DETAIL.NOTFOUND_CONS" | translate }}</h4>
+      <br>
+
+    </div>
+
+    <div *ngIf="pruebasDisponibles()">
+      <h1 class="categoria">{{"PATIENTS_DETAIL.PATIENTS.FIELD_6"|translate}}</h1>
+      <table class="table table-striped">
+        <!--Cabecera de la tabla-->
+        <thead>
+          <!-- Nueva fila con los campos principales -->
+          <tr>
+            <th class="lab">{{ "PATIENTSDET.PATIENTS.FIELD_8" | translate}} </th>
+            <th class="lab"> {{  "PATIENTSDET.PATIENTS.FIELD_2" | translate}} </th>
+            <th class="lab"> {{  "PATIENTSDET.PATIENTS.FIELD_10" | translate}} </th>
+            <th class="lab">+info</th>
+          </tr>
+        </thead>
+        <!-- Cuerpo de la tabla -->
+        <tbody>
+          <!-- Como queremos que se duplique tantas veces como datos en la tabla tengamos -->
+          <tr *ngFor="let c of pruebas.data">
+            <td class="lab"> {{c.tipoPrueba}} </td>
+            <td class="lab"> {{convertirFecha(c.fechaRealizacion) | date: "M/d/yy"}}</td>
+            <td class="lab"> {{c.trabLabNombre}} </td>
+            <td class="lab"><button class="icono" (click)="conseguirInfo(c.idPrueba)"><i
+                  class="fa fa-send"></i></button></td>
+          </tr>
+        </tbody>
+        <div class="numPag">
+
+          <button class="flechas" style="font-size:24px" *ngIf="masPaginasIzqPru()" (click)="antPagPru()">
+            <i class="fa fa-caret-square-o-left"></i>
+          </button>
+
+          <h5> {{pruebas.metadata.pageNumber}}/{{pruebas.metadata.totalPages}} </h5>
+
+          <button class="flechas" style="font-size:24px" *ngIf="masPaginasDchaPru()" (click)="sigPagPru()">
+            <i class="fa fa-caret-square-o-right"></i>
+          </button>
+        </div>
+
+      </table>
+    </div>
+
+
+    <div *ngIf="!pruebasDisponibles()">
+      <h1 class="categoria"> {{"PATIENTS_DETAIL.PATIENTS.FIELD_6"|translate}}</h1>
+      <h4 class="categoria"> {{ "PATIENTS_DETAIL.NOTFOUND_PRU" | translate }}</h4>
+      <br>
+
+    </div>
+
+    <div *ngIf="enfermedadDisponibles()">
+      <h1 class="categoria"> {{"PATIENTS_DETAIL.PATIENTS.FIELD_7"|translate}} </h1>
+      <table class="table table-striped">
+        <!--Cabecera de la tabla-->
+        <thead>
+          <!-- Nueva fila con los campos principales -->
+          <tr>
+            <th>{{ "PATIENTSDET.PATIENTS.FIELD_9" | translate}}</th>
+            <th> +info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Como queremos que se duplique tantas veces como datos en la tabla tengamos -->
+          <tr *ngFor="let s of enfermedad.data">
+            <td> {{s}} </td>
+            <td><button class="icono" (click)="avanzarPagMedicamento(s)"><i class="fa fa-send"></i></button></td>
+          </tr>
+        </tbody>
+
+        <div class="numPag">
+
+          <button class="flechas" style="font-size:24px" *ngIf="masPaginasIzqEnf()" (click)="antPagEnf()">
+            <i class="fa fa-caret-square-o-left"></i>
+          </button>
+
+          <h5> {{enfermedad.metadata.pageNumber}}/{{enfermedad.metadata.totalPages}} </h5>
+
+          <button class="flechas" style="font-size:24px" *ngIf="masPaginasDchaEnf()" (click)="sigPagEnf()">
+            <i class="fa fa-caret-square-o-right"></i>
+          </button>
+        </div>
+      </table>
+    </div>
+
+
+    <div *ngIf="!enfermedadDisponibles()">
+      <h1 class="categoria"> {{"PATIENTS_DETAIL.PATIENTS.FIELD_7"|translate}} </h1>
+      <h4 class="categoria"> {{ "PATIENTS_DETAIL.NOTFOUND_ENF" | translate }}</h4>
+      <br>
+    </div>
+
+
+
+
+
+    <div *ngIf="medicamentoDisponibles()">
+      <h1 class="categoria"> {{"PATIENTS_DETAIL.PATIENTS.FIELD_8"|translate}} </h1>
+      <table class="table table-striped">
+        <!--Cabecera de la tabla-->
+        <thead>
+          <!-- Nueva fila con los campos principales -->
+          <tr>
+            <th>{{ "PATIENTSDET.PATIENTS.FIELD_9" | translate}}</th>
+            <th> +info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Como queremos que se duplique tantas veces como datos en la tabla tengamos -->
+          <tr *ngFor="let o of medicamento.data">
+            <td> {{o}} </td>
+            <td><button class="icono" (click)="avanzarPagMedicamento(o)"><i
+                  class="fa fa-send"></i></button></td>
+          </tr>
+        </tbody>
+
+        <div class="numPag">
+
+          <button class="flechas" style="font-size:24px" *ngIf="masPaginasIzqMed()" (click)="antPagMed()">
+            <i class="fa fa-caret-square-o-left"></i>
+          </button>
+
+          <h5> {{medicamento.metadata.pageNumber}}/{{medicamento.metadata.totalPages}} </h5>
+
+          <button class="flechas" style="font-size:24px" *ngIf="masPaginasDchaMed()" (click)="sigPagMed()">
+            <i class="fa fa-caret-square-o-right"></i>
+          </button>
+        </div>
+      </table>
+    </div>
+
+
+    <div *ngIf="!medicamentoDisponibles()">
+      <h1 class="categoria"> {{"PATIENTS_DETAIL.PATIENTS.FIELD_8"|translate}} </h1>
+      <h4 class="categoria"> {{ "PATIENTS_DETAIL.NOTFOUND_MED" | translate }}</h4>
+    </div>
+
+
+
+
+  </div>
+  </div>
+
+
+</body>

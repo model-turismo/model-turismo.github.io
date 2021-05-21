@@ -1,0 +1,99 @@
+<app-nav-bar></app-nav-bar>
+
+
+<body>
+
+  <div class="recargar" *ngIf="!datosCargados">
+    <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+
+  </div>
+
+  <div class="animate__animated animate__fadeIn">
+    <div id="medicamento" *ngIf="medicamentoDisponible()">
+      <div *ngFor="let med of infoMedicamento.data ">
+
+        <h1 class="card-header">
+          {{med.nombre}}
+        </h1>
+
+        <div class="card-body">
+          <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_1" |translate}} </h1>
+          <h4>{{med.contraindicaciones}}</h4>
+          <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_2" |translate}} </h1>
+          <h4>{{med.posologia}}</h4>
+          <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_3" |translate}} </h1>
+          <h4>{{med.prospecto}}</h4>
+          <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_4" |translate}} </h1>
+          <h4>{{med.composicion}}</h4>
+
+          <div id="ayuda">
+            <button onclick="location.href=medurl" [medurl]='med.url'>{{"MEDICAMENTO.PAG_OFICIAL" | translate}}</button>
+            <!--<h2>{{med.url}}</h2>-->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="enfermedad" *ngIf="enfermedadDisponible()">
+      <div *ngFor="let enf of infoEnfermedad.data ">
+
+        <h1 class="card-header">
+          {{enf.nombre}}
+        </h1>
+
+        <div class="card-body">
+
+          <h1>{{ "TECHSUITE_WIKI.ENFERMEDAD.FIELD_1" |translate}} </h1>
+          <h4>{{enf.sintomas}}</h4>
+          <h1>{{ "TECHSUITE_WIKI.ENFERMEDAD.FIELD_2" |translate}} </h1>
+          <h4>{{enf.recomendaciones}}</h4>
+
+          <div id="ayuda">
+            <button onclick="location.href= enfurl" [enfurl]='enf.url'>{{"MEDICAMENTO.PAG_OFICIAL" |
+              translate}}</button>
+            <!--<h2>{{enf.url}}</h2>-->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="homeopatia" *ngIf="productoNaturalDisponible()">
+      <div *ngFor="let prod of infoProdNatural.data ">
+
+        <h1 class="card-header">
+          {{prod.nombre}}
+        </h1>
+
+        <div class="card-body">
+          <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_1" |translate}} </h1>
+          <h4>{{prod.contraindicaciones}}</h4>
+          <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_2" |translate}} </h1>
+          <h4>{{prod.posologia}}</h4>
+          <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_3" |translate}} </h1>
+          <h4>{{prod.prospecto}}</h4>
+          <h1>{{ "TECHSUITE_WIKI.MEDICAMENTO.FIELD_4" |translate}} </h1>
+          <h4>{{prod.composicion}}</h4>
+
+          <div id="ayuda">
+            <button onclick="location.href=produrl" [produrl]='prod.url'>{{"MEDICAMENTO.PAG_OFICIAL" |
+              translate}}</button>
+            <!--<h2>{{prod.url}}</h2>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-error animate__animated animate__backInDown"
+    *ngIf="datosCargados && !productoNaturalDisponible() && !enfermedadDisponible() && !medicamentoDisponible()">
+    <h5> {{ "MEDICAMENTO.NOTFOUND_MSG" | translate }} {{nombre}}</h5>
+    <button type="button" class="btn btn-primary button"
+      (click)="volver()">{{"PATIENTS_DETAIL.PATIENTS.FIELD_10"|translate}}</button>
+    <br>
+    <button type="button" class="btn btn-primary button" onclick="location.href='https://caracas.techsuite.live/solicitud';">{{"MEDICAMENTO.REGISTRAR"| translate: {nombred:nombre}   }}</button>
+  </div>
+
+</body>

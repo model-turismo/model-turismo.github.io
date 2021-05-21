@@ -1,0 +1,44 @@
+<app-nav-bar>
+</app-nav-bar>
+<div class=barrNav>
+
+    <h4 class="username" *ngIf="nombreDisponible()">{{nombre}}</h4>
+    <h4 class="tipo" *ngIf ="analisisSangre()"> {{"PRUEBAS.INFO.FIELD_10" | translate }}</h4>
+    <h4 class="tipo" *ngIf ="pruebaPCR()"> PCR</h4>
+</div>
+<body>
+    <h1 class="card-header">{{"PATIENTS_DETAIL.PATIENTS.FIELD_0"|translate: {nombrePac:nombrePaciente}   }}</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id = "box" class="card animate__animated animate__backInLeft"> 
+    
+    
+    <div class="card-body" *ngIf="analisisSangre()">
+        
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_2" | translate: {pruebatipo: tipoPrueba}       }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_1" | translate: {fecha:fechaRealizacion} }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_3" | translate: {trablab: trabLabNombre} }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_4" | translate: {numelectrolitos:electrolitos} }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_5" | translate: {numglucosa:glucosa}  }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_6" | translate: {colesterol1:colesterol}  }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_7" | translate: {trigliceridos1: trigliceridos}  }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_8" | translate: {bilirrubina1: bilirrubina}  }}</p>
+       
+        
+    </div>
+    <div class="card-body" *ngIf="pruebaPCR()">
+        
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_2" | translate: {pruebatipo: tipoPrueba}       }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_1" | translate: {fecha:fechaRealizacion} }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_3" | translate: {trablab: trabLabNombre} }}</p>
+        <p class="tamaño">{{"PRUEBAS.INFO.FIELD_9" | translate: {fluorescencia1: fluorescencia} }} </p>
+        
+        
+    </div>
+    <hr>
+    <button type="button" class="btn btn-primary button" (click)="volver()">{{"PATIENTS_DETAIL.PATIENTS.FIELD_10"|translate}}</button>
+    <hr>
+</div>
+</body>
